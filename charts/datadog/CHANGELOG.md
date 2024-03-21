@@ -1,5 +1,17 @@
 # Datadog changelog
 
+## 3.59.1
+
+* Add support for configuring Agent sidecar injection using Admission Controller.
+
+## 3.59.0
+
+* Set default `Agent` and `Cluster-Agent` version to `7.52.0`.
+
+## 3.58.1
+
+* Fix typo in PodSecurityPolicy warning note.
+
 ## 3.58.0
 
 * Change configuration options for APM Instrumentation. Starting from Agent and Cluster-Agent version `7.51.0` APM Instrumentation needs to be configured using the following configuration options:
