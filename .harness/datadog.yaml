@@ -3,7 +3,25 @@ service:
   identifier: datadog
   serviceDefinition:
     type: Kubernetes
-    spec: {}
+    spec:
+      manifests:
+        - manifest:
+            identifier: datalog
+            type: HelmChart
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: GitHub_connector
+                  gitFetchType: Branch
+                  folderPath: /charts/datadog
+                  repoName: helm-chart
+                  branch: main
+              subChartPath: ""
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+              helmVersion: V3
+              fetchHelmChartMetadata: false
   gitOpsEnabled: false
   orgIdentifier: default
   projectIdentifier: default_project
